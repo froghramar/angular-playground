@@ -1,21 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
-import localeFr from '@angular/common/locales/fr';
 import localeBn from '@angular/common/locales/bn';
 import { registerLocaleData } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeBn, 'bn');
+
+export function httpLoaderFactory(http: HttpClient) {
+	return new TranslateHttpLoader(http);
+}
 
 @NgModule({
 	declarations: [
 		AppComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		HttpClientModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: httpLoaderFactory,
+				deps: [ HttpClient ]
+			}
+		})
 	],
 	providers: [
 		{

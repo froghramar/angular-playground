@@ -1,8 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-	<h1>
-		Welcome to {{ title }}!
-	</h1>
-	<p>{{ today | date:'fullDate' | uppercase }}</p>
+	<select (change)="onLanguageChange($event.target.value)" [value]="lang" >
+		<option *ngFor="let language of languages" [value]="language.key">
+			{{ language.value }}
+		</option>
+	</select>
+	<p> {{ today | date:'fullDate' | uppercase }} </p>
+	<p> {{ 'HOW_ARE_YOU' | translate }} </p>
 </div>
-
