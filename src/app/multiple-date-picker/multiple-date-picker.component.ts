@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material';
 
 @Component({
@@ -8,12 +8,11 @@ import { MatDatepickerInputEvent } from '@angular/material';
 })
 export class MultipleDatePickerComponent implements OnInit {
 
+	@Input()
 	selectedDates: Date[];
 
 	constructor() {
-		this.selectedDates = [
-			new Date()
-		];
+		this.selectedDates = [ ];
 	}
 
 	ngOnInit() {

@@ -9,6 +9,9 @@
 			<mat-icon matChipRemove>cancel</mat-icon>
 		</mat-chip>
 	</mat-chip-list>
+	<span [hidden]="selectedDates.length > 0">
+		No Date Selected
+	</span>
 	<input
 		style="width: 0; padding: 0; border: 0;"
 		[matDatepicker]="picker"
