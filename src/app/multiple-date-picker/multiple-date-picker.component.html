@@ -1,0 +1,18 @@
+<div>
+	<mat-chip-list
+		class="display-inline-block">
+		<mat-chip
+			*ngFor="let selectedDate of selectedDates"
+			[removable]="true"
+			(removed)="removeDate(selectedDate)">
+			{{ selectedDate | date }}
+			<mat-icon matChipRemove>cancel</mat-icon>
+		</mat-chip>
+	</mat-chip-list>
+	<button
+		mat-icon-button>
+		<mat-icon class="font-size-20">
+			calendar_today
+		</mat-icon>
+	</button>
+</div>
