@@ -1,6 +1,20 @@
-<div>
-	<mat-chip-list
-		class="display-inline-block">
+<div
+	class="multiple-date-picker">
+	<mat-form-field>
+		<input
+			placeholder="Select a date"
+			matInput
+			[matDatepicker]="picker"
+			(dateChange)="onDateChange($event)">
+		<mat-datepicker-toggle
+			matSuffix
+			[for]="picker">
+		</mat-datepicker-toggle>
+		<mat-datepicker
+			#picker>
+		</mat-datepicker>
+	</mat-form-field>
+	<mat-chip-list>
 		<mat-chip
 			*ngFor="let selectedDate of selectedDates"
 			[removable]="true"
@@ -9,21 +23,14 @@
 			<mat-icon matChipRemove>cancel</mat-icon>
 		</mat-chip>
 	</mat-chip-list>
-	<span [hidden]="selectedDates.length > 0">
-		No Date Selected
-	</span>
-	<input
-		style="width: 0; padding: 0; border: 0;"
-		[matDatepicker]="picker"
-		(dateChange)="onDateChange($event)">
-	<mat-datepicker
-		#picker>
-	</mat-datepicker>
-	<button
-		(click)="picker.open()"
-		mat-icon-button>
-		<mat-icon class="font-size-20">
-			calendar_today
+	<div [hidden]="selectedDates.length > 0">
+		<mat-icon
+			style="vertical-align: text-bottom;">
+			info
 		</mat-icon>
-	</button>
+		<span
+			style="vertical-align: text-bottom;">
+			No Date Selected
+		</span>
+	</div>
 </div>

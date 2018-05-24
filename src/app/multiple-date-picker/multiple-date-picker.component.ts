@@ -26,7 +26,9 @@ export class MultipleDatePickerComponent implements OnInit {
 	}
 
 	onDateChange(event: MatDatepickerInputEvent<Date>) {
-		this.selectedDates.push(event.value);
+		if (event.value) {
+			this.selectedDates.push(event.value);
+		}
 	}
 
 }
