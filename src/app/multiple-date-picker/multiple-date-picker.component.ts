@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDatepickerInputEvent } from '@angular/material';
 
 @Component({
 	selector: 'app-multiple-date-picker',
@@ -23,6 +24,10 @@ export class MultipleDatePickerComponent implements OnInit {
 		if (index !== -1) {
 			this.selectedDates.splice(index, 1);
 		}
+	}
+
+	onDateChange(event: MatDatepickerInputEvent<Date>) {
+		this.selectedDates.push(event.value);
 	}
 
 }

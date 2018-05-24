@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatChipsModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatChipsModule, MatDatepickerModule, MatIconModule, MatNativeDateModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MultipleDatePickerComponent } from './multiple-date-picker/multiple-date-picker.component';
@@ -14,6 +14,8 @@ import { MultipleDatePickerComponent } from './multiple-date-picker/multiple-dat
 		BrowserModule,
 		MatButtonModule,
 		MatChipsModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
 		MatIconModule
 	],
 	providers: [],

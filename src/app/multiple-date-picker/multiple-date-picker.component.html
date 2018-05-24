@@ -9,7 +9,15 @@
 			<mat-icon matChipRemove>cancel</mat-icon>
 		</mat-chip>
 	</mat-chip-list>
+	<input
+		style="width: 0; padding: 0; border: 0;"
+		[matDatepicker]="picker"
+		(dateChange)="onDateChange($event)">
+	<mat-datepicker
+		#picker>
+	</mat-datepicker>
 	<button
+		(click)="picker.open()"
 		mat-icon-button>
 		<mat-icon class="font-size-20">
 			calendar_today
