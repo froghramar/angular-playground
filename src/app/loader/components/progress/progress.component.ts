@@ -14,6 +14,9 @@ export class ProgressComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		setTimeout(() => {
+			this.loading = false;
+		}, 2000);
 	}
 
 }

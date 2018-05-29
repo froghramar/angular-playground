@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material';
+import { FlexLayoutModule, } from '@angular/flex-layout';
 
-import { LoaderDirective, } from './loader.directive';
 import { ProgressComponent } from './components/progress/progress.component';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
 	declarations: [
-		LoaderDirective,
 		ProgressComponent
 	],
 	exports: [
-		LoaderDirective,
 		ProgressComponent,
 	],
 	imports: [
-		CommonModule
+		CommonModule,
+		FlexLayoutModule,
+		MatProgressSpinnerModule
 	],
+	providers: [
+		LoaderService
+	]
 })
 export class LoaderModule { }

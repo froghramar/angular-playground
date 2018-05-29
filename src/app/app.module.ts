@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoaderModule, } from './loader/loader.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [
@@ -10,6 +11,7 @@ import { LoaderModule, } from './loader/loader.module';
 	],
 	imports: [
 		BrowserModule,
+		FlexLayoutModule,
 		LoaderModule,
 	],
 	providers: [],
