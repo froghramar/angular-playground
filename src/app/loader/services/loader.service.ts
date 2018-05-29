@@ -4,9 +4,11 @@ import { BehaviorSubject} from 'rxjs/BehaviorSubject';
 @Injectable()
 export class LoaderService {
 
-	private loaders: {[key: string]: BehaviorSubject<boolean>};
+	readonly loaders: {[key: string]: BehaviorSubject<boolean>};
 
-	constructor() { }
+	constructor() {
+		this.loaders = {};
+	}
 
 	getCurrentValue(id: string) {
 		return this.loaders[id] ? this.loaders[id].getValue() : false;
@@ -14,7 +16,7 @@ export class LoaderService {
 
 	getLoaderEvents(id: string) {
 		if (!this.loaders[id]) {
-			this.loaders[id] = new BehaviorSubject<boolean>(false);
+			this.loaders[id] = new BehaviorSubject<boolean>(true);
 		}
 		return this.loaders[id].asObservable();
 	}
