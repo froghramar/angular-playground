@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VirtualScrollComponent implements OnInit {
 
+	virtualScrollContainerHeight = 1000;
+
 	constructor() { }
 
 	ngOnInit() {

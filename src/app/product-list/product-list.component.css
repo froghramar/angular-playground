@@ -1,6 +1,7 @@
 .scrollable-product-list {
 	height: 500px;
-	background-color: lightblue;
 	width: 500px;
 	margin: 0 auto;
+	position: relative;
+	border: 1px solid black;
 }
